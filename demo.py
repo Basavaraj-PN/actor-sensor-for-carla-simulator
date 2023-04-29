@@ -6,7 +6,7 @@ client = carla.Client('localhost', 2000)
 client.set_timeout(2.0)
 world = client.get_world()
 
-ego_player_id = 406
+ego_player_id = SET_THIS_TO_EGO_ID 
 
 while True:
     filtered_actors = actor_sensor(ego_player_id=ego_player_id, world=world,
