@@ -1,14 +1,13 @@
 
+from math import degrees, acos, sqrt
+import carla
 import sys
+
+CARLA_EGG_FILE_PATH = "/home/user_name/CARLA_0.9.13/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg"
 try:
-    sys.path.append(
-        "/home/omnipotent/CARLA_0.9.13/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg")
+    sys.path.append(CARLA_EGG_FILE_PATH)
 except IndexError:
     pass
-
-import carla
-
-from math import degrees, acos, sqrt
 
 
 def clamp(min_v, max_v, value):
