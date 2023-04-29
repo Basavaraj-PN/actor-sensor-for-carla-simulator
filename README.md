@@ -32,6 +32,7 @@ The `actor_sensor()` function takes the following arguments:
 - show_transform: If set to True, draws lines to show the transforms of the actors within the field of view. Default is False.
 - range_: The range (in meters) of the field of view. Default is 50.
 - actor_filter: The actor filter to use. Default is 'vehicle.*'.
+- Return the array containing filtered actors
 
 ## To Run demo example
 
