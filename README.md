@@ -38,3 +38,5 @@ The `actor_sensor()` function takes the following arguments:
 You need to get ego vehicle actor ID and set `ego_player_id` accordingly, then
 
 ```python3 demo.py```
+
+![alt text](https://github.com/Basavaraj-PN/actor-sensor-for-carla-simulator/blob/main/demo_result/demo_result.png)
