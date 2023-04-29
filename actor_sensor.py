@@ -61,23 +61,23 @@ def actor_sensor(ego_player_id, world, h_fov=45, v_fov=1, show_transform=False, 
             # Get the vector between the ego vehicle and current actor
             ego_to_actor_transform = actor.get_transform().location - ego_transform.location
             # Calculate the dot product between the forward vector of ego vehicle and the vector between ego vehicle and actor
-            dot_projection = round(
+            v_dot_projection = round(
                 ego_transform.get_forward_vector().dot(ego_to_actor_transform), 2)
             # Calculate the dot product between the up vector of ego vehicle and the vector between ego vehicle and actor
 
-            h_dot_projection2 = round(
+            h_dot_projection = round(
                 ego_transform.get_up_vector().dot(ego_to_actor_transform), 2)
 
             try:
                 # Calculate the angle between the forward vector of ego vehicle and the vector between ego vehicle and actor
-                angle_between_vectors = degrees(acos(
-                    clamp(-1, 1, dot_projection / round(carla.Vector3D(ego_to_actor_transform).length(), 2))))
+                angle_between_v_vectors = degrees(acos(
+                    clamp(-1, 1, v_dot_projection / round(carla.Vector3D(ego_to_actor_transform).length(), 2))))
+                    
                 # Calculate the angle between the up vector of ego vehicle and the vector between ego vehicle and actor
-
-                angle_h_dot_projection2 = degrees(acos(
-                    clamp(-1, 1, h_dot_projection2 / round(carla.Vector3D(ego_to_actor_transform).length(), 2))))
+                angle_between_h_vectors = degrees(acos(
+                    clamp(-1, 1, h_dot_projection / round(carla.Vector3D(ego_to_actor_transform).length(), 2))))
                 # Check if the actor is within the FOV and range of the ego vehicle
-                if angle_between_vectors <= h_fov + 0.01 and distance(actor.get_transform().location) <= range_ + 0.001 and abs(90 - angle_h_dot_projection2) <= v_fov + 0.001:
+                if angle_between_v_vectors <= h_fov + 0.01 and distance(actor.get_transform().location) <= range_ + 0.001 and abs(90 - angle_between_h_vectors) <= v_fov + 0.001:
                     filtered_actors.append(actor)
                     # Draw transformation between ego and actor
                     if show_transform:
