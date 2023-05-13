@@ -36,7 +36,7 @@ The `actor_sensor()` function takes the following arguments:
 
 ## To Run demo example
 
-You need to get ego vehicle actor ID and set `ego_player_id` accordingly, then
+You need to get ego vehicle actor ID and set `ego_player_id` in `demo.py` accordingly, then
 
 ```python3 demo.py```
 
