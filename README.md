@@ -2,6 +2,15 @@
 
 Actor Sensor is a module that allows you to filter other actors in the environment based on your own actor's location and field of view. It is built using the CARLA simulator and its Python API.
 
+## To Run demo example
+
+You need to get ego vehicle actor ID and set `ego_player_id` in `demo.py` accordingly, 
+then run example.
+
+```python3 demo.py```
+
+![alt text](https://github.com/Basavaraj-PN/actor-sensor-for-carla-simulator/blob/main/demo_result/demo_result.png)
+
 ## Requirements
 
 - CARLA simulator (version 0.9.13)
@@ -34,11 +43,4 @@ The `actor_sensor()` function takes the following arguments:
 - actor_filter: The actor filter to use. Default is 'vehicle.*'.
 - Return the array containing filtered actors
 
-## To Run demo example
 
-You need to get ego vehicle actor ID and set `ego_player_id` in `demo.py` accordingly, 
-then run example.
-
-```python3 demo.py```
-
-![alt text](https://github.com/Basavaraj-PN/actor-sensor-for-carla-simulator/blob/main/demo_result/demo_result.png)
